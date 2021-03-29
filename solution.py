@@ -122,7 +122,7 @@ def ping(host, timeout=1):
         delay = doOnePing(dest, timeout)
      #   print(delay)
         time.sleep(1)  # one second
-    vars = [(round(min(packetime), 2)), (round(sum(packetime)/len(packetime), 2)), (round(max(packetime), 2)),(round(statistics.stdev(packetime), 2))]
+    vars = [str(round(min(packetime), 2)), str(round(sum(packetime)/len(packetime), 2)), str(round(max(packetime), 2)),str(round(statistics.stdev(packetime), 2))]
     return vars
 
 if __name__ == '__main__':

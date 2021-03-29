@@ -103,7 +103,7 @@ def doOnePing(destAddr, timeout):
     myID = os.getpid() & 0xFFFF  # Return the current process i
     sendOnePing(mySocket, destAddr, myID)
     delay = receiveOnePing(mySocket, myID, timeout, destAddr)
-    packetime.append(delay)
+    packetime.append(delay*1000)
     mySocket.close()
     return delay
 
@@ -113,8 +113,8 @@ def ping(host, timeout=1):
     global packetime
     packetime=[]
     dest = gethostbyname(host)
-    print("Pinging " + dest + " using Python:")
-    print("")
+   # print("Pinging " + dest + " using Python:")
+    #print("")
     # Calculate vars values and return them
     
     # Send ping requests to a server separated by approximately one second
@@ -126,4 +126,4 @@ def ping(host, timeout=1):
     return vars
 
 if __name__ == '__main__':
-    ping("no.no.e")
+    ping("yahoo.com")
